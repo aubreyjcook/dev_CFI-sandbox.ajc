@@ -1,0 +1,27 @@
+.card-header[aria-expanded="false"] h5::before,
+.card-header[aria-expanded="false"] h5::after {
+  content: "▼";
+  font-size: 0.5em;
+  position: relative;
+  bottom: 2px;
+}
+
+.card-header[aria-expanded="true"] h5::before,
+.card-header[aria-expanded="true"] h5::after {
+  content: "▲";
+  font-size: 0.5em;
+  position: relative;
+  bottom: 2px;
+}
+
+h5::before {
+  margin-right: 5px;
+}
+
+h5::after {
+  margin-left: 5px;
+}
+
+.card-header.btn {
+  text-align: left;
+}

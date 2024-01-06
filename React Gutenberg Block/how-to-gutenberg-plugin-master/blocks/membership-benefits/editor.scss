@@ -1,0 +1,11 @@
+.editor-styles-wrapper #donation-block .wp-block:first-child {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .editor-styles-wrapper #donation-block .wp-block:first-child {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+}

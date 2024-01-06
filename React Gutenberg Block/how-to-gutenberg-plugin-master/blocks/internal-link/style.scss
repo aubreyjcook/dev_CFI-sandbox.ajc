@@ -1,0 +1,30 @@
+.internal-link {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 25px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.internal-link-image {
+  height: 125px !important;
+  min-height: 125px !important;
+  width: 125px !important;
+  min-width: 125px !important;
+  margin-right: 25px;
+}
+
+.internal-link-image img {
+  border-radius: 100%;
+}
+
+@media screen and (max-width: 599px) {
+  .internal-link {
+    display: block !important;
+  }
+
+  .internal-link-image {
+    text-align: center;
+    margin: 0 auto 15px;
+  }
+}

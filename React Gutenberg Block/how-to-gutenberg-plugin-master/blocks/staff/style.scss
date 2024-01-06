@@ -1,0 +1,33 @@
+.staff-block {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start !important;
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+}
+
+.contact-info p {
+  margin: 0px;
+}
+
+.staff-info {
+  text-align: left !important;
+  padding-left: 0px !important;
+}
+
+.staff-info h5 {
+  text-align: left;
+  font-style: italic;
+}
+
+.staff-image {
+  width: 125px;
+  min-width: 125px;
+  height: 125px;
+  min-height: 125px;
+  margin-right: 25px;
+}
+
+.staff-image img {
+  border-radius: 100%;
+}

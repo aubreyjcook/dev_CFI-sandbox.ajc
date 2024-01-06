@@ -1,0 +1,144 @@
+.image-card-left {
+  display: block;
+}
+
+.left-card-image {
+  flex-basis: 50%;
+}
+
+.card-info {
+  padding: 25px;
+}
+
+.left-card-image img {
+  border-radius: 0.25rem 0.25rem 0px 0px;
+}
+
+.left-card-image {
+  height: 100%;
+  max-height: 600px;
+}
+
+@media screen and (min-width: 600px) {
+  .sm.image-card-left {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  .sm .left-card-image img {
+    border-radius: 0.25rem 0px 0px 0.25rem;
+  }
+
+  .image-card-left {
+    display: block;
+  }
+
+  .lg.image-card-left {
+    display: block;
+  }
+
+  .xl.image-card-left {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .image-card-left {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  .image-card-left > div {
+    width: 50%;
+  }
+
+  .left-card-image img {
+    border-radius: 0.25rem 0px 0px 0.25rem;
+  }
+
+  .lg .left-card-image img {
+    border-radius: 0.25rem 0.25rem 0px 0px;
+  }
+
+  .xl .left-card-image img {
+    border-radius: 0.25rem 0.25rem 0px 0px;
+  }
+
+  .sm.image-card-left {
+    display: flex;
+  }
+
+  .lg.image-card-left {
+    display: block;
+  }
+
+  .xl.image-card-left {
+    display: block;
+  }
+
+  .page-template-contact-page .image-card-left .left-card-image {
+    min-height: 575px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .image-card-left {
+    display: flex;
+  }
+
+  .sm.image-card-left {
+    display: flex;
+  }
+
+  .lg.image-card-left {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  .lg .left-card-image img {
+    border-radius: 0.25rem 0px 0px 0.25rem;
+  }
+
+  .xl.image-card-left {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .image-card-left {
+    display: flex;
+  }
+
+  .sm.image-card-left {
+    display: flex;
+  }
+
+  .lg.image-card-left {
+    display: flex;
+  }
+
+  .xl.image-card-left {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  .xl .left-card-image img {
+    border-radius: 0.25rem 0px 0px 0.25rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .left-card-image {
+    min-height: calc((100vw - 120px) * 0.5625);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .left-card-image {
+    min-height: calc((100vw - 90px) * 0.5625);
+  }
+}
