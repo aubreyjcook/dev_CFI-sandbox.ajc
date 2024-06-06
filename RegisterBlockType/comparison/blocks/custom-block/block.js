@@ -3,7 +3,7 @@
     var RichText = editor.RichText;
     
     blocks.registerBlockType( 'mytheme/custom-block', {
-        title: 'This Custom Block',
+        title: 'Custom Block',
         icon: 'universal-access-alt',
         category: 'layout',
         attributes: {
