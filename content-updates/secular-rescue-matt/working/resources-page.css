@@ -1,0 +1,45 @@
+// The following code block is provided by the user. The user wants to generate a similar code block with some changes using Github Copilot. The user wants to generate a code block that is identical to the provided code block, but with the following changes: [CHANGES]
+
+// USER PROVIDED CODE BLOCK
+/* Path: Content-Updates/Secular-Rescue-Matt/working/resources-page.css */
+
+body.page-id-256 #content {
+    width: 100%;
+}
+
+body.page-id-256 main {
+    min-width: 95%;
+    text-align: center;
+}
+
+body.page-id-256 .internal-source img {
+    //unused
+}
+
+body.page-id-256 .internal-source h3::before, body.page-id-256 .internal-source h3::after{
+    display: none;
+}
+
+body.page-id-256 .resources-row {
+    //unused
+}
+
+body.page-id-256 .internal-source {
+    min-width: 24%;
+}
+
+@media (max-width: 767px) {
+	body.page-id-256 .internal-source {
+		min-width: 100%;
+	}
+}
+
+// Copilot will generate the following code based on the above code block.
+
+// Github copilot, based on the above code, generate identical functionality in the following code block, but based on the following changes: 
+1.
+
+
+// COPILOT GENERATED CODE BLOCK
+/* Path: Content-Updates/Secular-Rescue-Matt/build/resources-page.css */
+

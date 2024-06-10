@@ -4,7 +4,7 @@
     
     blocks.registerBlockType( 'mytheme/custom-block', {
         title: 'This Custom Block',
-        icon: 'universal-access-alt',
+        icon: 'page',
         category: 'layout',
         attributes: {
             content: {
