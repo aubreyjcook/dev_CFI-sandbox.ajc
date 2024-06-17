@@ -1,18 +1,16 @@
 <?php
 
 include(get_stylesheet_directory().'/functions/uploads-customizer-misc.php');
-
 include(get_stylesheet_directory().'/functions/custom-post-types.php');
-
 include(get_stylesheet_directory().'/functions/custom-taxonomies.php');
-
 include(get_stylesheet_directory().'/functions/overrides.php');
-
 include(get_stylesheet_directory().'/functions/acf-fields.php');
-
 include(get_theme_root().'/css/gutenberg.php');
-
 include(get_stylesheet_directory().'/functions/gutenberg.php');
+
+// Include custom blocks
+include( get_stylesheet_directory() . '/functions/custom-block.php' );
+include( get_stylesheet_directory() . '/functions/donation-block.php' );
 
 
 // Add everyaction donation script
@@ -134,8 +132,5 @@ function enqueue_custom_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
-
-// Include custom block registration
-include(get_stylesheet_directory() . '/functions/custom-block.php');
 
 ?>

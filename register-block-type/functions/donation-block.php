@@ -1,5 +1,5 @@
 <?php
-function my_custom_blocks_assets() {
+function register_donation_block() {
     // Register the donation block editor script
     wp_register_script(
         'donation-block-script',
@@ -32,5 +32,5 @@ function my_custom_blocks_assets() {
     ) );
 }
 
-add_action( 'init', 'my_custom_blocks_assets' );
+add_action( 'init', 'register_donation_block' );
 ?>
