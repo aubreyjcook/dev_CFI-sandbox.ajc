@@ -91,9 +91,7 @@
                     el('p', null, 'Of course! We appreciate being able to apply the full value of your donation to the work that we do. Choose the amount you\'d like to donate on this page and you have the option to decline a magazine subscription on the next.'),
                     el('h5', null, el('strong', null, 'I just want to donate, not become a member formally')),
                     el('p', null, 'We never publish the list of our members and all membership benefits (aside from the Freethought in Action newsletter and magazine) are delivered via email and your secure CFI online account. Taking advantage of your membership is completely optional.'),
-                    el('p', null, 'If you have any other concerns about this, please contact us at ', el('a', { href: 'mailto:development@centerforinquiry.org  ' }, '),
-                        '
-                    )
+                    el('p', null, 'If you have any other concerns about this, please contact us at ', el('a', { href: 'mailto:development@centerforinquiry.org  ' }, ' '), ' ')
                 )
             );
         },
