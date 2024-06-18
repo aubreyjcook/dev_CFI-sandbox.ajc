@@ -1,53 +1,3 @@
-
-/* previous iteration of IIFE function
-( function( blocks, element, blockEditor ) {
-    var el = element.createElement;
-    var RichText = blockEditor.RichText;
-    var useBlockProps = blockEditor.useBlockProps;
-
-    blocks.registerBlockType( 'mytheme/donation-block', {
-        title: 'Donation Block',
-        icon: 'heart',
-        category: 'widgets',
-        attributes: {
-            content: {
-                type: 'string',
-                source: 'html',
-                selector: 'div',
-            },
-        },
-        edit: function( props ) {
-            var content = props.attributes.content;
-
-            function onChangeContent( newContent ) {
-                props.setAttributes( { content: newContent } );
-            }
-
-            return el(
-                'div',
-                useBlockProps(),
-                el( RichText, {
-                    tagName: 'div',
-                    onChange: onChangeContent,
-                    value: content,
-                    placeholder: 'Enter your donation form code here...',
-                } )
-            );
-        },
-        save: function( props ) {
-            return el( RichText.Content, {
-                tagName: 'div',
-                value: props.attributes.content,
-            } );
-        },
-    } );
-}(
-    window.wp.blocks,
-    window.wp.element,
-    window.wp.blockEditor
-) ); */
-
-// Updated IIFE function, with two RichText fields, allowing for more complex block structure
 ( function( blocks, element, blockEditor ) {
     var el = element.createElement;
     var RichText = blockEditor.RichText;
@@ -128,7 +78,8 @@
             );
         }
     });
-}(
+}
+(
     window.wp.blocks,
     window.wp.element,
     window.wp.blockEditor
