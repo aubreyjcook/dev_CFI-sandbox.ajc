@@ -1,3 +1,7 @@
+// Provided code block with changes indicated by the user. Generate a similar code block with these changes:
+
+//USER INPUT
+
 ( function( blocks, element, blockEditor ) {
     var el = element.createElement;
     var RichText = blockEditor.RichText;
@@ -160,3 +164,7 @@
     window.wp.element,
     window.wp.blockEditor
 ));
+
+// Based on the above code, generate identical functionality with the specified changes. Add a comment summarizing the functionality and the changes made, explaining their purpose and relevance. If specific reviews are recommended, list the relevant lines.
+
+// COPILOT GENERATED CODE BLOCK
