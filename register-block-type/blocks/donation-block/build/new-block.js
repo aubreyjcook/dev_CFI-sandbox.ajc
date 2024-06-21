@@ -1,12 +1,11 @@
-// Provided code block with changes indicated by the user. Generate a similar code block with these changes:
-
-//USER INPUT
-
 ( function( blocks, element, blockEditor ) {
     var el = element.createElement;
     var RichText = blockEditor.RichText;
+    var InspectorControls = blockEditor.InspectorControls;
+    var PanelBody = wp.components.PanelBody;
+    var TextControl = wp.components.TextControl;
     var useBlockProps = blockEditor.useBlockProps;
-  
+
     blocks.registerBlockType( 'mytheme/donation-block', {
         title: 'Donation Block',
         icon: 'heart',
@@ -21,21 +20,39 @@
                 type: 'string',
                 source: 'html',
                 selector: 'p.additional-text'
+            },
+            scriptUrl: {
+                type: 'string',
+                default: ''
             }
         },
         edit: function( props ) {
             var blockProps = useBlockProps();
             var { attributes, setAttributes } = props;
-  
+
             function onChangeMainText( newContent ) {
                 setAttributes( { mainText: newContent } );
             }
-  
+
             function onChangeAdditionalText( newContent ) {
                 setAttributes( { additionalText: newContent } );
             }
-  
-            return el('div', { className: 'className' },
+
+            function onChangeScriptUrl( newUrl ) {
+                setAttributes( { scriptUrl: newUrl } );
+            }
+
+            return el('div', blockProps,
+                el(InspectorControls, null,
+                    el(PanelBody, { title: 'Script Settings' },
+                        el(TextControl, {
+                            label: 'External Script URL',
+                            value: attributes.scriptUrl,
+                            onChange: onChangeScriptUrl,
+                            placeholder: 'Enter script URL...'
+                        })
+                    )
+                ),
                 el('div', { className: 'col-lg-6' },
                     el(RichText, {
                         tagName: 'p',
@@ -43,7 +60,7 @@
                         onChange: onChangeMainText,
                         value: attributes.mainText,
                         placeholder: 'Insert main membership text here...'
-                    }),
+                    })
                 ),
                 el('div', { className: 'col-lg-6' },
                     el('h3', null, el('strong', null, 'Membership Benefits')),
@@ -80,7 +97,9 @@
                         )
                     )
                 ),
-                el('div', { className: 'showhide type="donations" more_text="View frequently asked questions about CFI membership and magazines." less_text="Read Less" hidden="yes" style="text-align: center"' },
+                el('div', {
+                    className: 'showhide type="donations" more_text="View frequently asked questions about CFI membership and magazines." less_text="Read Less" hidden="yes" style="text-align: center"'
+                },
                     el('h5', null, el('strong', null, 'What should I do if I\'m a current subscriber?')),
                     el('p', null, 'Extending our magazines to our donors is intended to be a bonus and thank you for those who support us most. Current subscribers who are also members will continue to receive only one magazine each issue. If you are already subscribed to one of our magazines we encourage you to choose the other to receive thought-provoking material from us each month.'),
                     el('h5', null, el('strong', null, 'My magazine subscription is going to expire soon, should I renew?')),
@@ -90,7 +109,7 @@
                     el('p', null, 'Of course! We appreciate being able to apply the full value of your donation to the work that we do. Choose the amount you\'d like to donate on this page and you have the option to decline a magazine subscription on the next.'),
                     el('h5', null, el('strong', null, 'I just want to donate, not become a member formally')),
                     el('p', null, 'We never publish the list of our members and all membership benefits (aside from the Freethought in Action newsletter and magazine) are delivered via email and your secure CFI online account. Taking advantage of your membership is completely optional.'),
-                    el('p', null, 'If you have any other concerns about this, please contact us at ', el('a', { href: 'mailto:development@centerforinquiry.org  ' }, ' '), ' ')
+                    el('p', null, 'If you have any other concerns about this, please contact us at ', el('a', { href: 'mailto:development@centerforinquiry.org' }, 'development@centerforinquiry.org'))
                 )
             );
         },
@@ -142,8 +161,9 @@
                         )
                     )
                 ),
-
-                el('div', { className: 'showhide type="donations" more_text="View frequently asked questions about CFI membership and magazines." less_text="Read Less" hidden="yes" style="text-align: center"' },
+                el('div', {
+                    className: 'showhide type="donations" more_text="View frequently asked questions about CFI membership and magazines." less_text="Read Less" hidden="yes" style="text-align: center"'
+                },
                     el('h5', null, el('strong', null, 'What should I do if I\'m a current subscriber?')),
                     el('p', null, 'Extending our magazines to our donors is intended to be a bonus and thank you for those who support us most. Current subscribers who are also members will continue to receive only one magazine each issue. If you are already subscribed to one of our magazines we encourage you to choose the other to receive thought-provoking material from us each month.'),
                     el('h5', null, el('strong', null, 'My magazine subscription is going to expire soon, should I renew?')),
@@ -153,18 +173,13 @@
                     el('p', null, 'Of course! We appreciate being able to apply the full value of your donation to the work that we do. Choose the amount you\'d like to donate on this page and you have the option to decline a magazine subscription on the next.'),
                     el('h5', null, el('strong', null, 'I just want to donate, not become a member formally')),
                     el('p', null, 'We never publish the list of our members and all membership benefits (aside from the Freethought in Action newsletter and magazine) are delivered via email and your secure CFI online account. Taking advantage of your membership is completely optional.'),
-                    el('p', null, 'If you have any other concerns about this, please contact us at ', el('a', { href: 'mailto:development@centerforinquiry.org  ' }, ' '), ' ')
+                    el('p', null, 'If you have any other concerns about this, please contact us at ', el('a', { href: 'mailto:development@centerforinquiry.org' }, 'development@centerforinquiry.org'))
                 )
             );
         }
     });
-}
-(
-    window.wp.blocks,
-    window.wp.element,
-    window.wp.blockEditor
-));
-
-// Based on the above code, generate identical functionality with the specified changes. Add a comment summarizing the functionality and the changes made, explaining their purpose and relevance. If specific reviews are recommended, list the relevant lines.
-
-// COPILOT GENERATED CODE BLOCK
+ 
+ 
+					 
+					  
+}( window.wp.blocks, window.wp.element, window.wp.blockEditor ));
