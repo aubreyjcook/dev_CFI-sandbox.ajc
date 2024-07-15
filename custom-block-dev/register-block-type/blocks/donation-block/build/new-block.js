@@ -53,6 +53,9 @@
                         })
                     )
                 ),
+                // external script
+                el('div', { id: 'external-script'}),
+
                 el('div', { className: 'col-lg-6' },
                     el(RichText, {
                         tagName: 'p',
