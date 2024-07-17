@@ -11,13 +11,16 @@ include(get_stylesheet_directory().'/functions/gutenberg.php');
 // Include custom blocks
 include(get_stylesheet_directory() . '/functions/custom-block.php');
 include(get_stylesheet_directory() . '/functions/donation-block.php');
-include( get_stylesheet_directory() . '/functions/dynamic-block.php' );
 
-// Add everyaction donation script
+
+// Everyaction donation script
 function register_scripts() {
     wp_enqueue_script('custom_form_js', site_url() . '/js/EAandFormmembership.js', [], true);
+    wp_enqueue_script('mobile_nav_js', site_url() . '/js/cfi-mobile-nav.js', [], filemtime(site_url() . '/js/cfi-mobile-nav.js'), true);
 }
 add_action('wp_enqueue_scripts', 'register_scripts');
+
+
 
 
 
@@ -81,11 +84,7 @@ if (function_exists('acf_add_options_page')) {
  */
 function my_map_meta_cap($caps, $cap, $user_id) {
     if ('unfiltered_html' === $cap && user_can($user_id, 'administrator' || 'editor'))
-        $caps = array('unfiltered_html');
-
-																						
-									   
-
+        $caps = array('unfiltered_html');			
     return $caps;
 }
 
@@ -123,15 +122,13 @@ add_action('wp_head', 'add_vibetv_pixel_code');
 function enqueue_custom_styles() {
     if (is_page(311370)) {
         // Enqueue the custom CSS file with a version number based on the file modification time
-        wp_enqueue_style(
-            'custom-style',
-            get_stylesheet_directory_uri() . '/custom-style.css',
-            array(),
-            filemtime(get_stylesheet_directory() . '/custom-style.css'),
-            'all'
-        );
+        wp_enqueue_style('custom-style', get_stylesheet_directory_uri() . '/custom-style.css', array(), filemtime(get_stylesheet_directory() . '/custom-style.css'), 'all');
+        
+        // Enqueue the header CSS file with a version number based on the file modification time
+        wp_enqueue_style('header-style', get_stylesheet_directory_uri() . '/header-style.css', array(), filemtime(get_stylesheet_directory() . '/header-style.css'), 'all');
     }
 }
+add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
 
 add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
 

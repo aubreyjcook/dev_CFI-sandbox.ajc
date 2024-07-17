@@ -102,7 +102,6 @@ function render_donation_block($attributes) {
                 <p>If you have any other concerns about this, please contact us at <a href="mailto:development@centerforinquiry.org">development@centerforinquiry.org</a>.</p>
             </div>
         </div>
-        <div id="external-script-placeholder"></div>
     </div>
     <?php
     return ob_get_clean();
