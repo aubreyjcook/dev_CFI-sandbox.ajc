@@ -11,7 +11,7 @@ include(get_stylesheet_directory().'/functions/gutenberg.php');
 // Include custom blocks
 include(get_stylesheet_directory() . '/functions/custom-block.php');
 include(get_stylesheet_directory() . '/functions/donation-block.php');
-include( get_stylesheet_directory() . '/functions/dynamic-block.php' );
+include(get_stylesheet_directory() . '/functions/dynamic-block.php' );
 
 // Add everyaction donation script
 function register_scripts() {
