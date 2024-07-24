@@ -1,7 +1,7 @@
 # QuackWatch 404s Overview
 
 ## Main Documentation
-- [Quackwatch 404 Guide](/documentation/quackwatch-404-guide.md)
+- [Quackwatch 404 Guide](/404s/quackwatch/documentation/quackwatch-404-guide.md)
 - [Quackwatch Redirect Fix Video](#redirect-fix-video)
 - [Quackwatch Legacy Files](#legacy-files)
 
