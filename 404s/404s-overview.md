@@ -7,4 +7,4 @@ CFI needs to address 404 errors for various parts of the multi-site. This improv
 ## Sites Experiencing Significant 404s
 
 ### [Quackwatch](https://quackwatch.org/)
-- [Quackwatch Overview](404s/quackwatch/quackwatch-overview.md)
+- [Quackwatch Overview](quackwatch/quackwatch-overview.md)
