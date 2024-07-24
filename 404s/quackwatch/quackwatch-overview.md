@@ -7,9 +7,9 @@
 
 ### 404s Data
 
-- [Original Crawled 404s Data (Fixed 404s are removed as completed)](#original-quackwatch-404s-data) <> <!-- TODO: Add link -->
-- [Finished 404s](#completed-404s) <> <!-- TODO: Add link -->
-- [Quackwatch 404s Copy with Notes](#redirect-404s-copy-with-notes) <!-- TODO: Add link -->
+- [Original Crawled 404s Data (Fixed 404s are removed as completed)](#original-quackwatch-404s-data)
+- [Finished 404s](#completed-404s)
+- [Quackwatch 404s Copy with Notes](#redirect-404s-copy-with-notes)
 
 ### Redirect LLM Review Template:
 
