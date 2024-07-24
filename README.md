@@ -7,5 +7,5 @@ This is a sandbox repository for code created for CFI by developer AJC to test o
 ## Table of Contents
 
 - [custom-block-dev](/custom-block-dev/custom-block-dev-overview.md)
-- [content-updates](/content-updates-/content-updates-overview.md)
+- [content-updates](/content-updates/content-updates-overview.md)
 - [404s](/404s/404s-overview.md)
