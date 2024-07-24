@@ -30,6 +30,8 @@
 
 ## Redirect Fix Video
 
+- [Redirect Fix Video Example]() <!-- TODO: Add Link -->
+
 ## Legacy Files
 
 ### Note on Legacy Files
