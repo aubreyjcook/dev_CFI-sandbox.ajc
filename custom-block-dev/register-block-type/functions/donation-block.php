@@ -100,6 +100,7 @@ function render_donation_block($attributes) {
                 <h5><strong>I just want to donate, not become a member formally</strong></h5>
                 <p>We never publish the list of our members and all membership benefits (aside from the Freethought in Action newsletter and magazine) are delivered via email and your secure CFI online account. Taking advantage of your membership is completely optional.</p>
                 <p>If you have any other concerns about this, please contact us at <a href="mailto:development@centerforinquiry.org">development@centerforinquiry.org</a>.</p>
+                <h1>Hello World</h1>
             </div>
         </div>
         <div id="external-script-placeholder"></div>
