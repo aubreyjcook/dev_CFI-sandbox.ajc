@@ -3,8 +3,13 @@
 ## Main Documentation
 - [Quackwatch 404 Guide](/quackwatch/404s/quackwatch/quackwatch-404-guide.md)
 - [Quackwatch Redirect Fix Video]() <!-- TODO: Add link>
-- [Quackwatch Legacy Files]() <!-- TODO: Add link>
+- [Quackwatch Legacy Files](#legacy-files)
 - [Quackwatch 404s Copy with Notes]() <!-- TODO: Add link -->
+
+### Finished 404s
+
+- [Original Crawled 404s Data (Fixed 404s are removed as completed)]() <> <!-- TODO: Add link -->
+- [Finished 404s]() <> <!-- TODO: Add link -->
 
 ## Regex
 - [Regex Overview](/quackwatch/regex/regex-overview.md)
