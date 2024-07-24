@@ -27,5 +27,5 @@
 
 ### Note on Legacy Files
 
-  Within the quackwatch directory are legacy files that are no longer in use. These files are kept for reference and should not be used in any new development. If you have any questions about these files, please contact the repository owner.
+  Within the quackwatch directory are legacy files that are no longer in use. This is under an ignored directory by git due to the size and deprecated nature of the files. The directory is normally located at `quackwatch/legacy-files/`. If you need access to these files, please contact the repository owner.
 
