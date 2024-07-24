@@ -3,6 +3,7 @@
 ## Main Documentation
 - [Quackwatch 404 Guide](/quackwatch/404s/quackwatch/quackwatch-404-guide.md)
 - [Quackwatch Redirect Fix Video]() <!-- TODO: Add link>
+- [Quackwatch Legacy Files]() <!-- TODO: Add link>
 
 ## Regex
 - [Regex Overview](/quackwatch/regex/regex-overview.md)
