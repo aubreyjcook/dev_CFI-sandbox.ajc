@@ -15,7 +15,7 @@
 
     I have a 404 that comes from: [SOURCE URL] it needs to point to [DESTINATION URL]
     For context: [CONTEXT]
-    Please review and create an example redirect for this 404. Use Regex if necessary.
+    Please review and create an example redirect for this 404. Use Regex if necessary. Indicate any noteworthy information. The redirect is handled using the redirection tool for WordPress.
 
 ## Redirect Fix Video
 
