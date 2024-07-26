@@ -4,6 +4,7 @@
 - [Quackwatch 404 Guide](/404s/quackwatch/documentation/quackwatch-404-guide.md)
 - [Quackwatch Redirect Fix Video](#redirect-fix-video)
 - [Quackwatch Legacy Files](#legacy-files)
+- [Observations](#observations)
 
 ### 404s Data
 
@@ -56,3 +57,6 @@ This is a copy of the Quackwatch 404s data made when revisiting the data in 07/2
 The data sheet is an internal CFI document and requires permissions to access.
 
 - [Quackwatch 404s Copy with Notes](https://docs.google.com/spreadsheets/d/1VPG1GDFP6bXBrsuSP8o0iuZV6ty7sk_3VL_5LNm7pOs/edit?gid=1794044567)
+
+### Observations
+
