@@ -1,3 +1,4 @@
+<?php
 add_action( 'template_redirect', 'custom_handle_404_redirect' );
 
 function custom_handle_404_redirect() {
@@ -5,3 +6,5 @@ function custom_handle_404_redirect() {
         // Your custom redirect logic here
     }
 }
+
+?>
