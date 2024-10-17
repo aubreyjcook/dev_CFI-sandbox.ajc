@@ -58,5 +58,220 @@ The data sheet is an internal CFI document and requires permissions to access.
 
 - [Quackwatch 404s Copy with Notes](https://docs.google.com/spreadsheets/d/1VPG1GDFP6bXBrsuSP8o0iuZV6ty7sk_3VL_5LNm7pOs/edit?gid=1794044567)
 
-### Observations
+### Legacy Directory Hierarchy
 
+The legacy directory structure is observed in the following data:
+
+/.well-known
+/00AboutQuackwatch
+/01QuackeryRelatedTopics
+/02ConsumerProtection
+/03HealthPromotion
+/04ConsumerEducation
+/05Links
+/06ResearchProjects
+/07PoliticalActivities
+/08Misc
+/09Advisors
+/10Bio
+/11Ind
+/12Web
+/13Hx
+/14Legal
+/15Ads
+/believe
+/cgi
+/cgi-bin
+/css
+/Gifs
+/GT
+/h
+/iom
+/lists
+/moving.page
+/n
+/nf
+/old
+/s
+/search
+/suspended.page
+/t
+/v
+/.well-known/acme-challenge
+/.well-known/pki-validation
+/00AboutQuackwatch/Awards
+/01QuackeryRelatedTopics/Cancer
+/01QuackeryRelatedTopics/chiroletters
+/01QuackeryRelatedTopics/dictionary
+/01QuackeryRelatedTopics/DSH
+/01QuackeryRelatedTopics/ems
+/01QuackeryRelatedTopics/Gifs
+/01QuackeryRelatedTopics/Hair
+/01QuackeryRelatedTopics/HBOT
+/01QuackeryRelatedTopics/Hearing
+/01QuackeryRelatedTopics/hearing_2010
+/01QuackeryRelatedTopics/homeopetition
+/01QuackeryRelatedTopics/lyme
+/01QuackeryRelatedTopics/Naturopathy
+/01QuackeryRelatedTopics/Nonvictims
+/01QuackeryRelatedTopics/OTA
+/01QuackeryRelatedTopics/PhonyAds
+/01QuackeryRelatedTopics/Tests
+/01QuackeryRelatedTopics/Victims
+/01QuackeryRelatedTopics/Cancer/clark
+/01QuackeryRelatedTopics/Cancer/clarkaff
+/01QuackeryRelatedTopics/Cancer/Gifs
+/01QuackeryRelatedTopics/Cancer/iat
+/01QuackeryRelatedTopics/Cancer/manner
+/01QuackeryRelatedTopics/Naturopathy/NANP
+/01QuackeryRelatedTopics/PhonyAds/Gifs
+/01QuackeryRelatedTopics/PhonyAds/slim
+/01QuackeryRelatedTopics/PhonyAds/znatural
+/01QuackeryRelatedTopics/PhonyAds/znatural/bankruptcy
+/01QuackeryRelatedTopics/Tests/alcat
+/01QuackeryRelatedTopics/Tests/bdort
+/01QuackeryRelatedTopics/Tests/cyto
+/01QuackeryRelatedTopics/Tests/genetic
+/01QuackeryRelatedTopics/Tests/Gifs
+/01QuackeryRelatedTopics/Tests/thyroflex
+/01QuackeryRelatedTopics/Tests/alcat/patents
+/02ConsumerProtection/AG
+/02ConsumerProtection/asyra
+/02ConsumerProtection/FDAActions
+/02ConsumerProtection/FTCActions
+/02ConsumerProtection/mccaskill
+/02ConsumerProtection/USPSActions
+/02ConsumerProtection/AG/AR
+/02ConsumerProtection/AG/AZ
+/02ConsumerProtection/AG/CA
+/02ConsumerProtection/AG/ME
+/02ConsumerProtection/AG/MO
+/02ConsumerProtection/AG/OR
+/02ConsumerProtection/AG/PA
+/02ConsumerProtection/AG/TX
+/02ConsumerProtection/AG/WA
+/02ConsumerProtection/FDAActions/mms
+/02ConsumerProtection/FDAActions/regenexx
+/03HealthPromotion/fibromyalgia
+/03HealthPromotion/fibromylagia
+/03HealthPromotion/Gifs
+/03HealthPromotion/immu
+/03HealthPromotion/immu/pertissis_outbreak_files
+/03HealthPromotion/immu/schiff
+/04ConsumerEducation/BookContents
+/04ConsumerEducation/Gifs
+/04ConsumerEducation/NegativeBR
+/04ConsumerEducation/News
+/04ConsumerEducation/Nonrecorg
+/04ConsumerEducation/null
+/04ConsumerEducation/QA
+/04ConsumerEducation/Reviews
+/04ConsumerEducation/Websites
+/04ConsumerEducation/Nonrecorg/abcmt
+/04ConsumerEducation/Nonrecorg/bernadean
+/04ConsumerEducation/Nonrecorg/dan
+/04ConsumerEducation/Nonrecorg/groton
+/04ConsumerEducation/Nonrecorg/healthyfoundations
+/04ConsumerEducation/QA/osteo
+/06ResearchProjects/als
+/06ResearchProjects/saam
+/07PoliticalActivities/MACCAH
+/07PoliticalActivities/WHC
+/07PoliticalActivities/WHC/wp
+/08Misc/dfh
+/08Misc/nasm
+/08Misc/zamboni
+/08Misc/dfh/tech
+/11Ind/bradstreet
+/11Ind/braverman
+/11Ind/Dardik
+/11Ind/Day
+/11Ind/farrah
+/11Ind/Gifs
+/11Ind/hinz
+/11Ind/hooper
+/11Ind/IOM
+/11Ind/kaptchuk
+/11Ind/Krop
+/11Ind/lee
+/11Ind/lundell
+/11Ind/panahpour
+/11Ind/Peskin
+/11Ind/Pinkus
+/11Ind/rubio
+/11Ind/sebi
+/11Ind/stowe
+/11Ind/von_kiel
+/11Ind/Watson
+/11Ind/young_documents
+/11Ind/farrah/fda
+/13Hx/dr_rinse
+/13Hx/MM
+/13Hx/probe
+/13Hx/TM
+/13Hx/probe/01
+/13Hx/probe/02
+/13Hx/probe/03
+/13Hx/probe/04
+/13Hx/probe/05
+/13Hx/probe/06
+/13Hx/probe/07
+/13Hx/probe/08
+/14Legal/klatz
+/15Ads/bbb
+/15Ads/dz10
+/15Ads/images
+/css/images
+/css/include
+/Gifs/schiff
+/lists/.well-known
+/lists/cgi-bin
+/lists/.well-known/acme-challenge
+/lists/.well-known/pki-validation
+/s/admin
+/s/css
+/s/p
+/s/www.holisticdentistillinois.com
+/s/css/images
+/s/p/admin
+
+Many errors are resolved by redefining the url to reflect the new hierarchy, here are some examples:
+
+Note: Each url normally begins with 'https://www.quackwatch.org/' within the live site.
+
+**Example 1:**
+
+/related/tt/ttresponse/ -> /related/ttresponse/
+
+Explanation: 
+
+The referall url occurs at https://quackwatch.org/related/tt/ and when an anchor tag defined as <A HREF="ttresponse.html"> is clicked, the route changes with the relative path to /related/tt/ttresponse/. However, the file is located at /related/ttresponse/ on the live site. The earlier segment is removed and the final segment is kept.
+
+**Example 2:**
+
+/related/theratec/Cancer/davidsonindictment/ -> /related/cancer/davidson/
+
+Explanation:
+
+There is a similar mismatch with the referall url as above, but the route is corrected by removal of the earlier segment and following the route that matches the live site hierarchical structure. Note that the first segment is removed but the two that follow are kept.
+
+**Example 3:**
+
+/related/tests/clia/bioter/ -> /related/tests/bioter/
+
+Explanation:
+
+The referall url occurs at https://quackwatch.org/related/tests/ where a legacy anchor tag is accessed. This occurs because the entire url is defined in the anchor tag, but it follows the a legacy pattern. Because of this, the segment between the first and final segment is actually removed.
+
+/related/tests/bodybalance/healthcheck/ -> /related/tests/healthcheck/
+
+**Example 4:**
+
+Explanation:
+
+This 404 is basically the same case as the last, but it's notable for existing under the same directory, showing that the pattern can follow from the same directory on a page where the same legacy anchor tag pattern is used.
+
+
+
+
+### Observations
