@@ -61,7 +61,7 @@ The data sheet is an internal CFI document and requires permissions to access.
 ### Legacy Directory Hierarchy
 
 The legacy directory structure is observed in the following data:
-
+`
 /.well-known
 /00AboutQuackwatch
 /01QuackeryRelatedTopics
@@ -234,6 +234,7 @@ The legacy directory structure is observed in the following data:
 /s/www.holisticdentistillinois.com
 /s/css/images
 /s/p/admin
+`
 
 Many errors are resolved by redefining the url to reflect the new hierarchy, here are some examples:
 
@@ -245,7 +246,7 @@ Note: Each url normally begins with 'https://www.quackwatch.org/' within the liv
 
 Explanation: 
 
-The referall url occurs at https://quackwatch.org/related/tt/ and when an anchor tag defined as <A HREF="ttresponse.html"> is clicked, the route changes with the relative path to /related/tt/ttresponse/. However, the file is located at /related/ttresponse/ on the live site. The earlier segment is removed and the final segment is kept.
+The referall url occurs at https://quackwatch.org/related/tt/ and when an anchor tag defined as `<A HREF="ttresponse.html">` is clicked, the route changes with the relative path to /related/tt/ttresponse/. However, the file is located at /related/ttresponse/ on the live site. The earlier segment is removed and the final segment is kept.
 
 **Example 2:**
 
