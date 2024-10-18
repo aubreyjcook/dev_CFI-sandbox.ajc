@@ -1,0 +1,70 @@
+
+/* Luminate Email Template */
+
+.post-type-luminate_emails .editor-styles-wrapper blockquote {
+  background-color: transparent !important;
+  border: none !important;
+  padding-top: 10px !important;
+}
+
+.post-type-luminate_emails .editor-styles-wrapper blockquote p {
+  margin: 0px !important;
+}
+
+.post-type-luminate_emails .acf-block-preview {
+  width: 600px
+}
+
+.post-type-luminate_emails .editor-styles-wrapper h1 {
+  font-size: 2em !important;
+  font-weight: bold !important;
+}
+
+.post-type-luminate_emails .editor-styles-wrapper h2 {
+  font-size: 1.5em !important
+}
+
+.post-type-luminate_emails .editor-styles-wrapper h3 {
+  font-size: 22px !important;
+}
+
+.post-type-luminate_emails .editor-styles-wrapper li a, .post-type-luminate_emails .editor-styles-wrapper p a {
+  text-decoration: underline !important;
+  color: #084d93 !important;
+}
+
+/* End Luminate Email Template */
+
+/* CFI General Page Template */
+
+.editor-post-title textarea {
+  font-size: 2.5em !important;
+  font-family: Lato, sans-serif !important;
+  text-transform: uppercase;
+}
+
+.editor-styles-wrapper p {
+  font-family: Lato, sans-serif;
+}
+
+.wp-block-heading h2 {
+  text-transform: uppercase;
+  font-family: Lato, sans-serif !important;
+  font-size: 1.75rem !important;
+  font-weight: 400 !important;
+}
+
+.editor-post-title__block label.screen-reader-text {
+  border-bottom: 4px solid black;
+  color: transparent !important;
+  width: 80px;
+  position: relative;
+  top: 90px !important;
+  left: 15px;
+  clip: none !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+  height: auto;
+}
+
+/* End CFI General Page Template */
