@@ -16,113 +16,119 @@ foreach ( $product_ids as $product_id ) {
 }
 ?>
 
-<div class="product-grid">
-	<!-- Product A -->
-	<div class="product product-a">
-		<h2>Product A</h2>
-		<div class="product-description">
-			<strong>What’s Included</strong>
-			<ul>
-				<li>Unlimited access to skepticalinquirer.org</li>
-				<li><em>Skeptical Inquirer</em>’s complete digital archive</li>
-				<li>Download full issue PDFs for easier reading</li>
-			</ul>
-		</div>
-		<h3>Subscription Length</h3>
-		<div class="subscription-options">
-			<label>
-				<input type="radio" name="product_a_subscription" value="229026" data-product-id="229026" checked>
-				1 Year - <?php echo $products[229026]['price']; ?>
-			</label>
-			<label>
-				<input type="radio" name="product_a_subscription" value="289595" data-product-id="289595">
-				2 Years - <?php echo $products[289595]['price']; ?>
-			</label>
-		</div>
-		<div class="product-quantity">
-			<?php
-			// Default to the 1-year subscription for Product A
-			$selected_product = $products[229026]['object'];
-			?>
-			<?php wc_get_template( 'checkout/add-to-cart/opc.php', array( 'product' => $selected_product ), '', PP_One_Page_Checkout::$template_path ); ?>
-		</div>
-	</div>
+<form id="subscriptionForm" method="post" action="">
+    <div class="product product-a">
+        <h2>Product A</h2>
+        <div class="subscription-options" id="subscription-productA">
+            <label>
+                <input type="radio" name="product_a_subscription" value="229026" data-product-id="229026" checked>
+                1 Year - <?php echo $products[229026]['price']; ?>
+            </label>
+            <label>
+                <input type="radio" name="product_a_subscription" value="289595" data-product-id="289595">
+                2 Years - <?php echo $products[289595]['price']; ?>
+            </label>
+        </div>
+        <!-- Hidden input to store current selection -->
+        <input type="hidden" name="selected_product_a" id="selected_product_a" value="229026">
+    </div>
 
-	<!-- Product B -->
-	<div class="product product-b">
-		<h2>Product B</h2>
-		<div class="product-description">
-			<strong>What’s Included</strong>
-			<ul>
-				<li>Unlimited access to skepticalinquirer.org</li>
-				<li><em>Skeptical Inquirer</em>’s complete digital archive</li>
-				<li>Download full issue PDFs for easier reading</li>
-				<li>6 issues a year delivered to your door</li>
-			</ul>
-		</div>
-		<h3>Subscription Length</h3>
-		<div class="subscription-options">
-			<label>
-				<input type="radio" name="product_b_subscription" value="229019" data-product-id="229019" checked>
-				1 Year - <?php echo $products[229019]['price']; ?>
-			</label>
-			<label>
-				<input type="radio" name="product_b_subscription" value="289637" data-product-id="289637">
-				2 Years - <?php echo $products[289637]['price']; ?>
-			</label>
-		</div>
-		<div class="product-quantity">
-			<?php
-			// Default to the 1-year subscription for Product B
-			$selected_product = $products[229019]['object'];
-			?>
-			<?php wc_get_template( 'checkout/add-to-cart/opc.php', array( 'product' => $selected_product ), '', PP_One_Page_Checkout::$template_path ); ?>
-		</div>
-	</div>
-</div>
+    <div class="product product-b">
+        <h2>Product B</h2>
+        <div class="subscription-options" id="subscription-productB">
+            <label>
+                <input type="radio" name="product_b_subscription" value="229019" data-product-id="229019" checked>
+                1 Year - <?php echo $products[229019]['price']; ?>
+            </label>
+            <label>
+                <input type="radio" name="product_b_subscription" value="289637" data-product-id="289637">
+                2 Years - <?php echo $products[289637]['price']; ?>
+            </label>
+        </div>
+        <!-- Hidden input to store current selection -->
+        <input type="hidden" name="selected_product_b" id="selected_product_b" value="229019">
+    </div>
 
+    <!-- Final submission button -->
+    <button type="submit" id="submitOrderButton">Submit Order</button>
+</form>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-	// Product A
-	const productAOptions = document.querySelectorAll('input[name="product_a_subscription"]');
-	const productAAddToCartButton = document.querySelector('.product-a .add_to_cart_button');
+    // Create a state object for tracking selections.
+    const subscriptionState = {
+        productA: {
+            selectedId: '229026', // default value for Product A
+        },
+        productB: {
+            selectedId: '229019', // default value for Product B
+        }
+    };
 
-	// Product B
-	const productBOptions = document.querySelectorAll('input[name="product_b_subscription"]');
-	const productBAddToCartButton = document.querySelector('.product-b .add_to_cart_button');
+    // Helper function to update the hidden inputs based on state.
+    function updateHiddenInputs() {
+        document.getElementById('selected_product_a').value = subscriptionState.productA.selectedId;
+        document.getElementById('selected_product_b').value = subscriptionState.productB.selectedId;
+    }
 
-	// Function to update the "Add to Order" button
-	function updateAddToCartButton(selectedProductId, addToCartButton) {
-		// Update the button's attributes
-		addToCartButton.setAttribute('data-product_id', selectedProductId);
-		addToCartButton.setAttribute('data-add_to_cart', selectedProductId);
-		addToCartButton.setAttribute('id', `product_${selectedProductId}`);
-		addToCartButton.setAttribute('value', selectedProductId);
+    // Attach event listeners for Product A options
+    document.querySelectorAll('#subscription-productA input[type="radio"]').forEach((radio) => {
+        radio.addEventListener('change', function() {
+            const selectedId = this.getAttribute('data-product-id');
+            subscriptionState.productA.selectedId = selectedId;
+            console.log('Product A selection updated:', subscriptionState.productA.selectedId);
+            updateHiddenInputs();
+        });
+    });
 
-		// Remove and re-add the button to force the OPC plugin to re-bind its event handlers
-		const parent = addToCartButton.parentElement;
-		const clone = addToCartButton.cloneNode(true);
-		parent.removeChild(addToCartButton);
-		parent.appendChild(clone);
+    // Attach event listeners for Product B options
+    document.querySelectorAll('#subscription-productB input[type="radio"]').forEach((radio) => {
+        radio.addEventListener('change', function() {
+            const selectedId = this.getAttribute('data-product-id');
+            subscriptionState.productB.selectedId = selectedId;
+            console.log('Product B selection updated:', subscriptionState.productB.selectedId);
+            updateHiddenInputs();
+        });
+    });
 
-		// Trigger the OPC plugin's event handlers
-		if (typeof wcopc !== 'undefined' && typeof wcopc.bindAddToCartButtons === 'function') {
-			wcopc.bindAddToCartButtons();
-		}
-	}
+    // Option 1: Standard form submission (hidden inputs already updated)
+    // The form will be submitted and processed on the server side.
+    
+    // Option 2: AJAX submission example:
+    document.getElementById('subscriptionForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission.
+        
+        // Optionally update hidden inputs again (if needed)
+        updateHiddenInputs();
+        
+        // Prepare data to send.
+        const formData = {
+            product_a: subscriptionState.productA.selectedId,
+            product_b: subscriptionState.productB.selectedId
+        };
 
-	// Add event listeners to Product A radio buttons
-	productAOptions.forEach(option => {
-		option.addEventListener('change', function() {
-			updateAddToCartButton(this.getAttribute('data-product-id'), productAAddToCartButton);
-		});
-	});
-
-	// Add event listeners to Product B radio buttons
-	productBOptions.forEach(option => {
-		option.addEventListener('change', function() {
-			updateAddToCartButton(this.getAttribute('data-product-id'), productBAddToCartButton);
-		});
-	});
+        // Replace with your actual AJAX endpoint URL.
+        const ajaxEndpoint = 'https://yourdomain.com/wp-json/myplugin/v1/update_order';
+        
+        fetch(ajaxEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // If using a nonce, include it here (e.g., 'X-WP-Nonce': myPluginData.nonce)
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                console.log('Order updated successfully:', data.message);
+                // Optionally, redirect or update the UI.
+            } else {
+                console.error('Order update failed:', data.message);
+            }
+        })
+        .catch(error => {
+            console.error('AJAX error:', error);
+        });
+    });
 });
 </script>
