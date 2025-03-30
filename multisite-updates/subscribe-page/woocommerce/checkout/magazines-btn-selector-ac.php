@@ -51,6 +51,11 @@ foreach ( $product_ids as $product_id ) {
 
     <!-- Final submission button -->
     <button type="submit" id="submitOrderButton">Submit Order</button>
+
+    <!-- woocommerce template hook for old button
+    https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_get_template -->
+    <!-- old button (enclosed in php) -->
+    <!-- <php wc_get_template( 'checkout/add-to-cart/opc.php', array( 'product' => $selected_product ), '', PP_One_Page_Checkout::$template_path );> -->
 </form>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
