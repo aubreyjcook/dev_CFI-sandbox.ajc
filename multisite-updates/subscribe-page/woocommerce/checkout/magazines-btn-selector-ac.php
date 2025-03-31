@@ -112,9 +112,9 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // Replace with your actual AJAX endpoint URL.
-        const ajaxEndpoint = 'https://yourdomain.com/wp-json/myplugin/v1/update_order';
+        // const ajaxEndpoint = 'https://yourdomain.com/wp-json/myplugin/v1/update_order';
         
-        fetch(ajaxEndpoint, {
+        /* fetch(ajaxEndpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('AJAX error:', error);
-        });
+        }); */
     });
 });
 </script>
