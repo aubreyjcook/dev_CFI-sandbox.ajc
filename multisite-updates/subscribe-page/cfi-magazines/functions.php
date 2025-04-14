@@ -84,3 +84,8 @@ function custom_post_type_cat_filter($query) {
 add_action('pre_get_posts','custom_post_type_cat_filter');
 
 include(get_stylesheet_directory().'/functions/custom-endpoints.php');
+
+// Add this temporarily to functions.php to check registered routes
+add_action('rest_api_init', function() {
+  var_dump(rest_get_server()->get_routes());
+}, 9999);
