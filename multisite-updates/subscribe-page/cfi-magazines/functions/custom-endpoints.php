@@ -1,7 +1,6 @@
 <?php
 add_action('rest_api_init', function() {
-    error_log('Registering custom REST endpoint'); // Debugging line
-    register_rest_route('custom/v1', '/endpoint/', array(1
+    register_rest_route('custom/v1', '/endpoint/', array(
         'methods' => 'GET',
         'callback' => 'custom_endpoint_handler',
         'permission_callback' => '__return_true' // Or your custom permission check
