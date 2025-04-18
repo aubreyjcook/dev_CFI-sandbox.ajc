@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // Replace with your actual AJAX endpoint URL.
-        // const ajaxEndpoint = 'https://yourdomain.com/wp-json/myplugin/v1/update_order';
+        // const ajaxEndpoint = 'https://skepticalinquirer.org/wp-json/custom/v1/endpoint/';
         
         /* fetch(ajaxEndpoint, {
             method: 'POST',
