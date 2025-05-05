@@ -112,28 +112,31 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // Replace with your actual AJAX endpoint URL.
-        // const ajaxEndpoint = 'https://skepticalinquirer.org/wp-json/custom/v1/endpoint/';
+        const ajaxEndpoint = 'https://skepticalinquirer.org/wp-json/custom/v1/endpoint/';
         
-        /* fetch(ajaxEndpoint, {
+        fetch(ajaxEndpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 // If using a nonce, include it here (e.g., 'X-WP-Nonce': myPluginData.nonce)
+                // make this work ajc 05-05-2025
+                //'X-WP-Nonce': myPluginData.nonce // Example nonce, replace with your actual nonce
             },
             body: JSON.stringify(formData)
         })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                console.log('Order updated successfully:', data.message);
+                document.querySelector('.cart-count').textContent = data.cartCount; // Update cart count in the UI.
                 // Optionally, redirect or update the UI.
+                window.location.href = '/checkout/';
             } else {
-                console.error('Order update failed:', data.message);
+                alert('Failed to update cart');
             }
         })
         .catch(error => {
             console.error('AJAX error:', error);
-        }); */
+        });
     });
 });
 </script>

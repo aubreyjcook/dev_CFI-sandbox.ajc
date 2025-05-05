@@ -26,6 +26,9 @@ include(get_stylesheet_directory().'/functions/gutenberg.php');
 // Add everyaction donation script
 function register_scripts() {
   wp_enqueue_script( 'custom_form_js', site_url() . '/js/everyactionmembership.js', [], true);
+  
+  //need to add this nonce for custom endpoint for subscription form update ajc 05-05-2025
+  //wp_localize_script( 'custom_form_js', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 }
 add_action( 'wp_enqueue_scripts', 'register_scripts' );
 
