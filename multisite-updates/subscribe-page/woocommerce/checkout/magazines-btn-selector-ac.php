@@ -58,6 +58,28 @@ foreach ( $product_ids as $product_id ) {
     <!-- <php wc_get_template( 'checkout/add-to-cart/opc.php', array( 'product' => $selected_product ), '', PP_One_Page_Checkout::$template_path );> -->
 </form>
 <script>
+// Temporary test button
+document.body.innerHTML += `
+  <button id="testButton" style="position:fixed;top:10px;right:10px;z-index:9999;">
+    Test Endpoint
+  </button>
+`;
+
+document.getElementById('testButton').addEventListener('click', async () => {
+  try {
+    const response = await fetch('/wp-json/custom/v1/test-endpoint/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ test: 'frontend_data' })
+    });
+    const data = await response.json();
+    console.log('Test Response:', data);
+    alert(`Check console! Cart items changed by: ${data.cart_change}`);
+  } catch (error) {
+    console.error('Test Failed:', error);
+  }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     // Create a state object for tracking selections.
     const subscriptionState = {
