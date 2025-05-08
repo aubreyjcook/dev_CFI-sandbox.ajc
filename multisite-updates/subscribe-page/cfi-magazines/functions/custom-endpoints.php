@@ -37,7 +37,7 @@ function custom_endpoint_handler(WP_REST_Request $request) {
     ], 200);
 }
 
-/* Example test via DeepSeek
+// Example test via DeepSeek
 
 function test_submission_handler(WP_REST_Request $request) {
     // Get raw input data
@@ -68,8 +68,6 @@ add_action('rest_api_init', function() {
         'permission_callback' => '__return_true' // Bypass auth for testing ONLY
     ]);
 });
-
-*/
 
 /* Instructions for test
 

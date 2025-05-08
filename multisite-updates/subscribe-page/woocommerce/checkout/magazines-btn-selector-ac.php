@@ -52,6 +52,10 @@ foreach ( $product_ids as $product_id ) {
     <!-- Final submission button -->
     <button type="submit" id="submitOrderButton">Submit Order</button>
 
+    <button id="testButton">
+        Test Endpoint
+    </button>
+
     <!-- woocommerce template hook for old button
     https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_get_template -->
     <!-- old button (enclosed in php) -->
@@ -59,11 +63,13 @@ foreach ( $product_ids as $product_id ) {
 </form>
 <script>
 // Temporary test button
+/*
 document.body.innerHTML += `
   <button id="testButton" style="position:fixed;top:10px;right:10px;z-index:9999;">
     Test Endpoint
   </button>
 `;
+*/
 
 document.getElementById('testButton').addEventListener('click', async () => {
   try {
