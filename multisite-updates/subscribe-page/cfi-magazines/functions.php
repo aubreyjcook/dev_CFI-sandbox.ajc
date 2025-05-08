@@ -86,4 +86,6 @@ function custom_post_type_cat_filter($query) {
 
 add_action('pre_get_posts','custom_post_type_cat_filter');
 
-include(get_stylesheet_directory().'/functions/custom-endpoints.php');
+// include(get_stylesheet_directory().'/functions/custom-endpoints.php');
+
+require_once get_template_directory() . '/functions/custom-endpoints.php';
