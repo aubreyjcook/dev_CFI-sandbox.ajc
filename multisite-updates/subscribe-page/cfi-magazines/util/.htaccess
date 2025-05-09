@@ -1,15 +1,3 @@
-<Files debug.log>
-order allow,deny
-deny from all
-</files>
-
-## WP Defender - Protect PHP Executed ##
-<Files *.php>
-Order allow,deny
-Deny from all
-</Files>
-## WP Defender - End ##
-
 # ALLOW REST API REQUESTS
 <Files "debug.log">
     Order allow,deny
