@@ -1,8 +1,25 @@
 # Subscribe-Page Update Notes
 
-## Private Backup Index
+## notes
+
+*Where to find template files*
+
+"The various template files on your WooCommerce site can be found via an FTP client or your hosts file manager, in /wp-content/plugins/woocommerce/templates/. Alternatively, you can find the template files on our repository on GitHub." -> https://github.com/woocommerce/woocommerce/blob/trunk/docs/theme-development/template-structure.md 
 
 
+*Origin product pages*
+
+Main subscribe page: https://skepticalinquirer.org/subscribe/
+
+Product pages (legacy): https://skepticalinquirer.org/product/skeptical-inquirer-print-subscription/ https://skepticalinquirer.org/product/skeptical-inquirer-digital-subscription/
+
+*Products on backend*
+
+![image](products-screenshot-01.png "Products on backend")
+
+*Relevant WC Library Functions/Hooks*
+
+- [WC_Form_Handler (Class)](https://wp-kama.com/plugin/woocommerce/function/WC_Form_Handler)
 
 ## DeepSeek
 
