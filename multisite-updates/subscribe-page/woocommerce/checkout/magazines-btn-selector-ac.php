@@ -1,60 +1,66 @@
 <?php
-// Get the product IDs from the shortcode
-$product_ids = array( 229026, 229019, 289595, 289637 );
+// Define product pairs
+$products = [
+    'digital' => [
+        '1-year' => 229026,
+        '2-year' => 289595
+    ],
+    'print' => [
+        '1-year' => 229019,
+        '2-year' => 289637
+    ]
+];
 
 // Fetch product data
-$products = array();
-foreach ( $product_ids as $product_id ) {
-	$product = wc_get_product( $product_id );
-	if ( $product ) {
-		$products[$product_id] = array(
-			'price' => $product->get_price_html(),
-			'title' => $product->get_title(),
-			'object' => $product, // Store the product object
-		);
-	}
+$product_data = [];
+foreach ($products as $type => $durations) {
+    foreach ($durations as $duration => $id) {
+        $product = wc_get_product($id);
+        if ($product) {
+            $product_data[$type][$duration] = [
+                'id' => $id,
+                'price' => $product->get_price_html(),
+                'title' => $product->get_title()
+            ];
+        }
+    }
 }
 ?>
 
 <form id="subscriptionForm" method="post" action="">
-    <div class="product product-a">
-        <h2>Product A</h2>
-        <div class="subscription-options" id="subscription-productA">
-            <label>
-                <input type="radio" name="product_a_subscription" value="229026" data-product-id="229026" checked>
-                1 Year - <?php echo $products[229026]['price']; ?>
-            </label>
-            <label>
-                <input type="radio" name="product_a_subscription" value="289595" data-product-id="289595">
-                2 Years - <?php echo $products[289595]['price']; ?>
-            </label>
+    <!-- Digital Subscription -->
+    <div class="product digital">
+        <h2>Digital Subscription</h2>
+        <div class="options">
+            <?php foreach ($product_data['digital'] as $duration => $data) : ?>
+                <label>
+                    <input type="radio" 
+                           name="digital_subscription" 
+                           value="<?php echo $data['id']; ?>"
+                           <?php checked($duration, '1-year'); ?>>
+                    <?php echo ucfirst($duration); ?> - <?php echo $data['price']; ?>
+                </label>
+            <?php endforeach; ?>
         </div>
-        <!-- Hidden input to store current selection -->
-        <input type="hidden" name="selected_product_a" id="selected_product_a" value="229026">
     </div>
 
-    <div class="product product-b">
-        <h2>Product B</h2>
-        <div class="subscription-options" id="subscription-productB">
-            <label>
-                <input type="radio" name="product_b_subscription" value="229019" data-product-id="229019" checked>
-                1 Year - <?php echo $products[229019]['price']; ?>
-            </label>
-            <label>
-                <input type="radio" name="product_b_subscription" value="289637" data-product-id="289637">
-                2 Years - <?php echo $products[289637]['price']; ?>
-            </label>
+    <!-- Print Subscription -->
+    <div class="product print">
+        <h2>Print + Digital Subscription</h2>
+        <div class="options">
+            <?php foreach ($product_data['print'] as $duration => $data) : ?>
+                <label>
+                    <input type="radio" 
+                           name="print_subscription" 
+                           value="<?php echo $data['id']; ?>"
+                           <?php checked($duration, '1-year'); ?>>
+                    <?php echo ucfirst($duration); ?> - <?php echo $data['price']; ?>
+                </label>
+            <?php endforeach; ?>
         </div>
-        <!-- Hidden input to store current selection -->
-        <input type="hidden" name="selected_product_b" id="selected_product_b" value="229019">
     </div>
 
-    <!-- Final submission button -->
-    <button type="submit" id="submitOrderButton">Submit Order</button>
-
-    <button id="testButton">
-        Test Endpoint
-    </button>
+    <button type="submit" class="button">Subscribe Now</button>
 
     <!-- woocommerce template hook for old button
     https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_get_template -->
