@@ -1,0 +1,27 @@
+# ALLOW REST API REQUESTS
+<Files "debug.log">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # WHITELIST THE REST API PATH
+    RewriteCond %{REQUEST_URI} ^/wp-json/custom/v1/endpoint/ [NC]
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+    
+    # KEEP OTHER PROTECTIONS
+    <Files *.php>
+        Order allow,deny
+        Deny from all
+        <IfModule mod_headers.c>
+            # EXCEPT FOR THESE PATHS:
+            SetEnvIf Request_URI "^/wp-json/" allow
+            SetEnvIf Request_URI "^/xmlrpc.php" allow
+            Order allow,deny
+            Allow from env=allow
+            Satisfy any
+        </IfModule>
+    </Files>
+</IfModule>

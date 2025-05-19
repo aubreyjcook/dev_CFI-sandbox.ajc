@@ -60,13 +60,14 @@ foreach ($products as $type => $durations) {
         </div>
     </div>
 
-    <button type="submit" class="button">Subscribe Now</button>
+    <button type="submit" class="button">Add to Order</button>
 
     <!-- woocommerce template hook for old button
     https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_get_template -->
     <!-- old button (enclosed in php) -->
     <!-- <php wc_get_template( 'checkout/add-to-cart/opc.php', array( 'product' => $selected_product ), '', PP_One_Page_Checkout::$template_path );> -->
 </form>
+
 <script>
 // Temporary test button
 /*
@@ -109,6 +110,7 @@ document.querySelector('.subscription-form').addEventListener('submit', function
         }
     });
 });
+
 /* Not used 2025-05-17 ac
 document.getElementById('testButton').addEventListener('click', async () => {
   try {
