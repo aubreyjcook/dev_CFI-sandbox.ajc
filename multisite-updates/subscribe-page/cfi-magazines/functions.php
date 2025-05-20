@@ -111,6 +111,15 @@ function save_campaign_code_field($order_id) {
     }
 }
 
+// Custom endpoints file function check
+$endpoint_file = get_stylesheet_directory().'/functions/custom-endpoints.php';
+if (file_exists($endpoint_file)) {
+    require_once($endpoint_file);
+} else {
+    error_log('Custom endpoints file not found: ' . $endpoint_file);
+}
+
 // This is part of the subscribe page up date - 2025-05-19
 // include(get_stylesheet_directory().'/functions/custom-endpoints.php');
-require_once get_template_directory() . '/functions/custom-endpoints.php';
+// require_once get_template_directory() . '/functions/custom-endpoints.php';
+require_once(get_stylesheet_directory().'/functions/custom-endpoints.php');
