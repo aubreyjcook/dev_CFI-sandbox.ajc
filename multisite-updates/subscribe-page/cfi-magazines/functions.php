@@ -120,6 +120,21 @@ if (file_exists($endpoint_file)) {
 }
 
 // This is part of the subscribe page up date - 2025-05-19
-// include(get_stylesheet_directory().'/functions/custom-endpoints.php');
-// require_once get_template_directory() . '/functions/custom-endpoints.php';
-require_once(get_stylesheet_directory().'/functions/custom-endpoints.php');
+//require_once(get_stylesheet_directory().'/functions/custom-endpoints.php');
+// Enqueue scripts properly
+function enqueue_subscription_scripts() {
+    wp_enqueue_script(
+        'subscription-form', 
+        get_stylesheet_directory_uri() . '/js/subscription-form.js', 
+        array('jquery'), 
+        filemtime(get_stylesheet_directory() . '/js/subscription-form.js'), 
+        true
+    );
+    
+    // Localize script data
+    wp_localize_script('subscription-form', 'subscription_vars', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'checkout_url' => wc_get_checkout_url()
+    ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_subscription_scripts');

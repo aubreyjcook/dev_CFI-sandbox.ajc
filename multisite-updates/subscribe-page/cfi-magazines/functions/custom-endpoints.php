@@ -1,50 +1,54 @@
 <?php
-/* new from refactor example 02 function.php 2025-05-17 ac
-this is to utilize the inherent wc functions
-*/
 add_action('wp_ajax_process_subscription_selections', 'handle_subscription_selections');
 add_action('wp_ajax_nopriv_process_subscription_selections', 'handle_subscription_selections');
 
 function handle_subscription_selections() {
-    check_ajax_referer('add-to-cart', '_ajax_nonce');
-    
-    $products = json_decode(stripslashes($_POST['products']), true);
-    WC()->cart->empty_cart();
-    
-    $errors = [];
-    foreach ($products as $product) {
-        if (!WC()->cart->add_to_cart($product['id'])) {
-            $errors[] = $product['id'];
+    try {
+        // Verify nonce
+        check_ajax_referer('add-to-cart', '_ajax_nonce');
+        
+        // Validate input
+        if (empty($_POST['products'])) {
+            throw new Exception('No products selected');
         }
+
+        $products = json_decode(stripslashes($_POST['products']), true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new Exception('Invalid product data format');
+        }
+
+        WC()->cart->empty_cart();
+        $errors = [];
+
+        foreach ($products as $product) {
+            if (empty($product['id']) || !is_numeric($product['id'])) {
+                $errors[] = 'Invalid product ID';
+                continue;
+            }
+
+            $product_obj = wc_get_product($product['id']);
+            if (!$product_obj) {
+                $errors[] = $product['id'];
+                continue;
+            }
+
+            if (!WC()->cart->add_to_cart($product['id'])) {
+                $errors[] = $product['id'];
+            }
+        }
+
+        wp_send_json([
+            'success' => empty($errors),
+            'errors' => $errors,
+            'cart_count' => WC()->cart->get_cart_contents_count(),
+            'redirect_url' => wc_get_checkout_url()
+        ]);
+
+    } catch (Exception $e) {
+        wp_send_json([
+            'success' => false,
+            'message' => $e->getMessage()
+        ], 400);
     }
-    
-    wp_send_json([
-        'success' => empty($errors),
-        'errors' => $errors,
-        'cart_count' => WC()->cart->get_cart_contents_count()
-    ]);
 }
 
-
-/* This is for viewing the products array data on the dev inspector
-Access via:
-https://yoursite.com/wp-json/debug/v1/products/
-05-17-2025 ac */
-add_action('rest_api_init', function() {
-    register_rest_route('debug/v1', '/products/', [
-        'methods'  => 'GET',
-        'callback' => function() {
-            $products = [
-                'digital' => [
-                    '1-year' => wc_get_product(229026),
-                    '2-year' => wc_get_product(289595)
-                ],
-                'print' => [
-                    '1-year' => wc_get_product(229019),
-                    '2-year' => wc_get_product(289637)
-                ]
-            ];
-            return new WP_REST_Response($products);
-        }
-    ]);
-});
