@@ -123,15 +123,23 @@ if (file_exists($endpoint_file)) {
 //require_once(get_stylesheet_directory().'/functions/custom-endpoints.php');
 // Enqueue scripts properly
 function enqueue_subscription_scripts() {
+    $js_path = get_stylesheet_directory() . '/js/subscription-form.js';
+    
+    // Debug file existence
+    error_log('Subscription JS Path: ' . $js_path);
+    error_log('File exists: ' . (file_exists($js_path) ? 'Yes' : 'No'));
+    
     wp_enqueue_script(
         'subscription-form', 
         get_stylesheet_directory_uri() . '/js/subscription-form.js', 
         array('jquery'), 
-        filemtime(get_stylesheet_directory() . '/js/subscription-form.js'), 
+        filemtime($js_path), 
         true
     );
     
-    // Localize script data
+    // Debug localization
+    error_log('Script localized: subscription-form');
+    
     wp_localize_script('subscription-form', 'subscription_vars', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'checkout_url' => wc_get_checkout_url()

@@ -30,3 +30,8 @@ foreach ($products as $type => $durations) {
 <form id="subscriptionForm" method="post" action="">
     
 </form>
+
+<script>
+console.log('WP Scripts:', Object.keys(window.wp));
+console.log('Subscription Vars:', window.subscription_vars);
+</script>
